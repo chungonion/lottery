@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Lottery.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/Tickets")]
 public class TicketController : ControllerBase
 {
     private readonly ITicketService _ticketService;
@@ -66,7 +66,7 @@ public class TicketController : ControllerBase
 
 
     [HttpPost]
-    [Route("create")]
+    [Route("")]
     public async Task<IActionResult> CreateTicket([FromBody] CreateTicketBody body)
     {
         var status = await _context.Status.FirstOrDefaultAsync();
